@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style>
+    *{
+        padding:0px;
+        margin:0px;
+        box-sizing:border-box;
+        font-family:'Courier New', Courier, monospace;
+    }
+    .pagination{
+        text-align:center;
+        padding:20px;
+    }
+    .pagination a{
+       padding:10px;
+        text-decoration: none;
+        color:black;
+    }
+     .pagination a.active{
+        background-color:rgb(9, 172, 9);
+    }
+    .pagination a:hover:not(.active){
+        background-color:gray;
+    }
+    .image{
+        width:100%;
+        height:30%;
+        position:relative;
+        top:10px;
+        border-radius:30px;
+        
+    }
+    .image img{ 
+       width:100%;
+       height:20%;
+        justify-content:center;
+        border-radius:30px;
+    }
+    *{
+            text-decoration:none;
+            list-style-type: none;
+            color:white;
+            
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        .container{
+            display:flex;
+            flex-wrap: wrap;
+            gap:200px;
+            position:relative;
+            padding-left:10px;
+            border-radius:15px;
+            background-color: rgba(0, 0, 0, 0.741);
+        }
+        a{
+            line-height:40px;
+        }
+	.content4{
+            transition: 0.1 s;
+        }
+        .information4 .content4 a {
+            display:inline-block;
+            padding:0px 10px 10px 10px;
+            cursor:pointer;
+        } 
+    .content4 :hover{
+        transform:translateY(20px);
+
+    }
+    .content3{
+            transition: 0.1 s;
+        }
+        .content3 :hover{
+        transform:translateX(10px);
+
+    }
+    .content2{
+            transition: 0.1 s;
+        }
+        .content2 :hover{
+        transform:translateX(10px);
+
+    }
+    .content1{
+            transition: 0.1 s;
+        }
+	.content1 :hover{
+        transform:translateX(10px);
+
+    }
+    .container h1{
+        position:relative;
+        top:0px;
+        
+        cursor:pointer;
+
+    }
+    .content1,.content2,.content3{
+        transition: 10s;
+        padding:10px;
+    }
+    .content1,.content2,.content3{
+        transform:translateY(-20px);
+    }
+    .underline{
+        width:100%;
+        border-radius:3px;
+        height:5px;
+        background-color:black;
+        margin-top:8px;
+    }
+ .underline span{
+        width:15px;
+        height:5px;
+        background-color:white;
+        position:absolute;
+        left:10px;
+        border-radius:5px;
+        animation:moving 3s linear infinite;
+    }
+    @keyframes moving{
+        0%{
+            left:-15px;
+        }
+        100%{
+            left:86%;
+        }
+        
+    }
+    .containermobiles{
+        display:flex;
+        flex-wrap:wrap;
+         
+        
+    }
+    .containermobiles img{
+        height:200px;
+        width:200px;
+
+
+    }
+    .imgs{
+        border-style:solid;
+       margin:10px;
+       padding:10px;
+       background-color:white;
+       color:black;
+       border-radius:15px;
+       box-shadow:10px 10px 10px 10px rgba(0, 0, 0, 0.788);
+       
+    }
+    .imgs h1,p,h2{
+        text-align:center;
+        padding:3px;
+        cursor:pointer;
+        float:bottom;
+    }
+    .containermobiles img{
+        float:right;
+        margin-left:50px;
+    }
+    .imgs a{
+        text-decoration:none;
+        cursor:pointer;
+        text-align:center;
+    }
+    *{
+            text-decoration:none;
+            list-style-type: none;
+            color:black;
+            
+        }
+        button{
+        text-align:center;
+        width:70%;
+        padding:10px;
+        margin:10px 10px 15px 30px;
+        background-color:gray;
+        border-radius:5px;
+        cursor:pointer;
+        text-align:center;
+       
+    }
+    h5{
+        background-color:yellow
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:gray;
+    padding: 10px;
+    color: white;
+    width:100%;
+}
+
+.nav-left,.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.nav-location {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.location-icon {
+    margin-right: 5px;
+}
+
+.nav-section {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.nav-section:hover {
+    text-decoration: underline;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+.search-btn {
+    background-color: #febd69;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.search-btn:hover {
+    background-color: #f3a847;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.cart-icon {
+    font-size: 20px;
+}
+select{
+    height:28px;
+    border-radius:4px;
+}
+
+        
+        
+
+</style>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-logo">Amazon.in</a>
+            <a href="#" class="nav-location"><span class="location-icon"> <i class="fa-solid fa-location-crosshairs"></i></span> Update location</a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-center">
+                <select>
+                    <option>All</option>
+                    <option>Laptops</option>
+                    <option>Mobiles</option>
+                    <option>Fashion</option>
+                    <option>Offers</option>
+                </select>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            </div>
+            <a href="#" class="nav-link">Returns & Orders</a>
+            <a href="#" class="nav-link cart-icon"> <i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </nav>
+    
+    <header>
+        <header>
+            <div class="image">
+                <img src="smartphones.jpg">
+              </div>
+        <div class="pagination">
+            <a href="page3.html"><</a>
+            <a href="index.html" >1</a>
+            <a href="page2.html">2</a>
+            <a href="page3.html">3</a>
+            <a href="page4.html" class="active">4</a>
+            <a href="page5.html">5</a>
+            <a href="page5.html">></a>
+    
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="containermobiles">
+
+            <div class="imgs">
+                <img src="iqooz9s.jpg">
+                <h1>iqoo z9 5g</h1>
+                <p>Bank Offer 10% off <br>Exchange extra bonus</p>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;21,999/-</mark> &nbsp;<del>24,999/-</del></p>
+                <p><a href="">Check EMI Options</a></p>
+                <button id ="mybutton15">Add To Cart</button><br>
+                <button id="mybutton16">Buy Now</button>
+                <h5 id="myh515"></h5>
+                <h5 id="myh516"></h5>
+            </div> 
+            <div class="imgs">
+                <img src="iqooz7pro.jpg">
+                <h1>iqoo z9 5g</h1>
+                <p>Bank Offer 10% off <br>Exchange extra bonus</p>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;20,999/-</mark> &nbsp;<del>26,999/-</del></p>
+                <p><a href="">Check EMI Options</a></p>
+                <button id ="mybutton17">Add To Cart</button><br>
+                <button id="mybutton18">Buy Now</button>
+                <h5 id="myh517"></h5>
+                <h5 id="myh518"></h5>
+            </div> 
+            <div class="imgs">
+                <img src="iqooz9.jpg">
+                <h1>iqoo z9 5g</h1>
+                <p>Bank Offer 10% off <br>Exchange extra bonus</p>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;16,999/-</mark> &nbsp;<del>19,999/-</del></p>
+                <p><a href="">Check EMI Options</a></p>
+                <button id ="mybutton13">Add To Cart</button><br>
+                <button id="mybutton14">Buy Now</button>
+                <h5 id="myh513"></h5>
+                <h5 id="myh514"></h5>
+            </div> 
+            <div class="imgs">
+                <img src="oppof25pro5g.jpg">
+                <h1>oppo f25 Pro 5g</h1>
+                <p>Bank Offer 10% off <br>Exchange extra bonus</p>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;23,999/-</mark> &nbsp;<del>28,999/-</del></p>
+                <p><a href="">Check EMI Options</a></p>
+                <button id ="mybutton1">Add To Cart</button><br>
+                <button id="mybutton2">Buy Now</button>
+                <h5 id="myh51"></h5>
+                <h5 id="myh52"></h5>
+            </div>
+            <div class="imgs">
+                <img src="lenovo.jpg">
+                <h1>Lenovo IdeaPad<br> i5 12th generation</h1>
+                <p>Bank Offer 10% off <br>Exchange extra bonus</p>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;52,999/-</mark> &nbsp;<del>62,999/-</del></p>
+                <p><a href="">Check EMI Options</a></p>
+                <button id ="mybutton32">Add To Cart</button><br>
+                <button id="mybutton33">Buy Now</button>
+                <h5 id="myh32"></h5>
+                <h5 id="myh33"></h5>
+            </div>
+            <div class="imgs">
+                <img src="asus.jpg">
+                <h1>Asus VivoBook<br> i5-1200H
+                    <br> 12th generation</h1>
+                <p>Bank Offer 10% off <br>Exchange extra bonus</p>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;52,999/-</mark> &nbsp;<del>62,999/-</del></p>
+                <p><a href="">Check EMI Options</a></p>
+                <button id ="mybutton34">Add To Cart</button><br>
+                <button id="mybutton35">Buy Now</button>
+                <h5 id="myh34"></h5>
+                <h5 id="myh35"></h5>
+            </div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+                <div class="information1">
+                <h1>Company <div class="underline"><span></span></div></h1>
+                <div class="content1">
+                    <ol>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Our Services</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Affillicate Program</a></li>
+                    </ol>
+                </div>
+             </div>
+             <div class="information2">
+                <h1>Get Help<div class="underline"><span></span></div></h1>
+                <div class="content2">
+                    <ol>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Shipping</a></li>
+                        <li><a href="">Returns</a></li>
+                        <li><a href="">Order Status</a></li>
+                        <li><a href="">Payment Options</a></li>
+                    </ol>
+                </div>
+             </div>
+ <div class="information3">
+                <h1>Online shop<div class="underline"><span></span></div></h1>
+                <div class="content3">
+                    <ol>
+                        <li><a href="">Watch</a></li>
+                        <li><a href="">Bag</a></li>
+                        <li><a href="">Shoes</a></li>
+                        <li><a href="">Dress</a></li>
+                    </ol>
+                </div>
+             </div>
+            <div class="information4">
+                <h1>Follow Us<div class="underline"><span></span></div></h1>
+                <div class="content4">
+                        <a href=""><i  id="z" class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i  id="z" class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i  id="z" class="fa-brands fa-square-instagram"></i></a>
+                        <a href=""><i  id="z" class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+   <script>
+    const Button15=document.getElementById("mybutton15");
+    const Myh515=document.getElementById("myh515");
+    Button15.onclick=function(){
+        Myh515.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button16=document.getElementById("mybutton16");
+    const Myh516=document.getElementById("myh516");
+    Button16.onclick=function(){
+        Myh516.textContent=`Item is deliever soon`;
+    }
+    const Button17=document.getElementById("mybutton17");
+    const Myh517=document.getElementById("myh517");
+    Button17.onclick=function(){
+        Myh517.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button18=document.getElementById("mybutton18");
+    const Myh518=document.getElementById("myh518");
+    Button18.onclick=function(){
+        Myh518.textContent=`Item is deliever soon`;
+    }
+    const Button13=document.getElementById("mybutton13");
+    const Myh513=document.getElementById("myh513");
+    Button13.onclick=function(){
+        Myh513.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button14=document.getElementById("mybutton14");
+    const Myh514=document.getElementById("myh514");
+    Button14.onclick=function(){
+        Myh514.textContent=`Item is deliever soon`;
+    }
+    const Button1=document.getElementById("mybutton1");
+    const Myh51=document.getElementById("myh51");
+    Button1.onclick=function(){
+        Myh51.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button2=document.getElementById("mybutton2");
+    const Myh52=document.getElementById("myh52");
+    Button2.onclick=function(){
+        Myh52.textContent=`Item is deliever soon`;
+    }
+    const Button32=document.getElementById("mybutton32");
+    const Myh32=document.getElementById("myh32");
+    Button32.onclick=function(){
+        Myh32.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button33=document.getElementById("mybutton33");
+    const Myh33=document.getElementById("myh33");
+    Button33.onclick=function(){
+        Myh33.textContent=`Item is deliever soon`;
+    }
+    const Button34=document.getElementById("mybutton34");
+    const Myh34=document.getElementById("myh34");
+    Button34.onclick=function(){
+        Myh34.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button35=document.getElementById("mybutton35");
+    const Myh35=document.getElementById("myh35");
+    Button35.onclick=function(){
+        Myh35.textContent=`Item is deliever soon`;
+    }
+    
+
+   
+   </script>
+</body>
+</html>

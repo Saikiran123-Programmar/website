@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style>
+    *{
+        padding:0px;
+        margin:0px;
+        box-sizing:border-box;
+        text-decoration:none;
+         list-style-type: none;
+        color:black;
+        font-family:'Courier New', Courier, monospace;
+    }
+    .pagination{
+        text-align:center;
+        padding:30px;
+    }
+    .pagination a{
+       padding:10px;
+        text-decoration: none;
+        color:black;
+        margin-top:10px;
+    }
+     .pagination a.active{
+        background-color:rgb(9, 172, 9);
+    }
+    .pagination a:hover:not(.active){
+        background-color:gray;
+    }
+    .image{
+        width:100%;
+        height:30%;
+        position:relative;
+        top:10px;
+        border-radius:30px;
+        
+    }
+    .image img{ 
+       width:100%;
+       height:20%;
+        justify-content:center;
+        border-radius:30px;
+    }
+    .containermobiles{
+        display:flex;
+        flex-wrap:wrap;
+         
+        
+    }
+    .containermobiles img{
+        height:200px;
+        width:200px;
+
+
+    }
+    .imgs{
+        border-style:solid;
+       margin:20px;
+       padding:10px;
+       background-color:white;
+       color:black;
+       border-radius:15px;
+       box-shadow:10px 10px 10px 10px rgba(0, 0, 0, 0.788);
+       
+    }
+    .imgs h1,p{
+        text-align:center;
+        padding:3px;
+        cursor:pointer;
+        float:bottom;
+    }
+   
+    .containermobiles img{
+        float:left;
+        margin-left:50px;
+    }
+    .imgs a{
+        text-decoration:none;
+        cursor:pointer;
+        text-align:center;
+    }
+    
+        
+        .container{
+            display:flex;
+            flex-wrap: wrap;
+            gap:200px;
+            position:relative;
+            padding-left:10px;
+            border-radius:15px;
+            background-color: rgba(0, 0, 0, 0.741);
+        }
+        a{
+            line-height:40px;
+        }
+	.content4{
+            transition: 0.1 s;
+        }
+        .information4 .content4 a {
+            display:inline-block;
+            padding:0px 10px 10px 10px;
+            cursor:pointer;
+        } 
+    .content4 :hover{
+        transform:translateY(20px);
+
+    }
+    .content3{
+            transition: 0.1 s;
+        }
+        .content3 :hover{
+        transform:translateX(10px);
+
+    }
+    .content2{
+            transition: 0.1 s;
+        }
+        .content2 :hover{
+        transform:translateX(10px);
+
+    }
+    .content1{
+            transition: 0.1 s;
+        }
+	.content1 :hover{
+        transform:translateX(10px);
+
+    }
+    .container h1{
+        position:relative;
+        top:0px;
+        
+        cursor:pointer;
+
+    }
+    .content1,.content2,.content3{
+        transition: 10s;
+        padding:10px;
+    }
+    .content1,.content2,.content3{
+        transform:translateY(-20px);
+    }
+    .underline{
+        width:100%;
+        border-radius:3px;
+        height:5px;
+        background-color:black;
+        margin-top:8px;
+    }
+ .underline span{
+        width:15px;
+        height:5px;
+        background-color:white;
+        position:absolute;
+        left:10px;
+        border-radius:5px;
+        animation:moving 3s linear infinite;
+    }
+    @keyframes moving{
+        0%{
+            left:-15px;
+        }
+        100%{
+            left:86%;
+        }
+        
+    }
+    button{
+        text-align:center;
+        width:70%;
+        padding:10px;
+        margin:10px 10px 15px 30px;
+        background-color:gray;
+        border-radius:5px;
+        cursor:pointer;
+        text-align:center;
+       
+    }
+    h5{
+        background-color:yellow;
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:gray;
+    padding: 10px;
+    color: white;
+    width:100%;
+}
+
+.nav-left,.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.nav-location {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.location-icon {
+    margin-right: 5px;
+}
+
+.nav-section {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.nav-section:hover {
+    text-decoration: underline;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+.search-btn {
+    background-color: #febd69;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.search-btn:hover {
+    background-color: #f3a847;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.cart-icon {
+    font-size: 20px;
+}
+select{
+    height:28px;
+    border-radius:4px;
+}
+
+        
+
+</style>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-logo">Amazon.in</a>
+            <a href="#" class="nav-location"><span class="location-icon"> <i class="fa-solid fa-location-crosshairs"></i></span> Update location</a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-center">
+                <select>
+                    <option>All</option>
+                    <option>Laptops</option>
+                    <option>Mobiles</option>
+                    <option>Fashion</option>
+                    <option>Offers</option>
+                </select>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            </div>
+            <a href="#" class="nav-link">Returns & Orders</a>
+            <a href="#" class="nav-link cart-icon"> <i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </nav>
+    <header>
+    <div class="image">
+        <img src="shirts.jpg">
+      </div>
+    <div class="pagination">
+        <a href="index.html"><</a>
+        <a href="index.html" >1</a>
+        <a href="page2.html" class="active">2</a>
+        <a href="page3.html">3</a>
+        <a href="page4.html">4</a>
+        <a href="page5.html">5</a>
+        <a href="page3.html">></a>
+
+    </div>
+</header>
+<main>
+    <section>
+        
+        <div class="containermobiles">
+            <div class="imgs">
+                <img src="maroon.jpg">
+                <h1>Falcon Stylish <br>Shirt's for Men</h1>
+                
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;330/-</mark></p>
+                <button id ="mybutton1">Add To Cart</button><br>
+                <button id="mybutton2">Buy Now</button>
+                <h5 id="myh51"></h5>
+                <h5 id="myh52"></h5>
+            </div>
+            <div class="imgs">
+                <img src="everyday.jpg">
+                <h1>Everyday <br>Oversized Tee</h1>
+                
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;899/-</mark></p>
+                <button id ="mybutton3">Add To Cart</button><br>
+                <button id="mybutton4">Buy Now</button>
+                <h5 id="myh53"></h5>
+                <h5 id="myh54"></h5>
+            </div>
+            <div class="imgs">
+                <img src="white.jpg">
+                <h1> Solid<br>Women Round Neck</h1>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;329/-</mark></p>
+                <button id ="mybutton5">Add To Cart</button><br>
+                <button id="mybutton6">Buy Now</button>
+                <h5 id="myh55"></h5>
+                <h5 id="myh56"></h5>
+            </div>
+            <div class="imgs">
+                <img src="jocky.jpg">
+                <h1>Jockey Men <br>Black Boxer<br> Brief Pack <br>of 2 - S - 8008</h1>
+                
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;549/-</mark></p>
+                <button id ="mybutton7">Add To Cart</button><br>
+                <button id="mybutton8">Buy Now</button>
+                <h5 id="myh57"></h5>
+                <h5 id="myh58"></h5>
+            </div>
+            <div class="imgs">
+                <img src="black.jpg">
+                <h1>Jockey Men<br> Black T-shirt</h1>
+                
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;1,049/-</mark></p>
+                <button id ="mybutton9">Add To Cart</button><br>
+                <button id="mybutton10">Buy Now</button>
+                <h5 id="myh59"></h5>
+                <h5 id="myh510"></h5>
+            </div>
+           
+            <div class="imgs">
+                <img src="blue.jpg">
+                <h1>Jockey Men's<br> Regular T-Shirt</h1>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;1049/-</mark></p>
+                <button id ="mybutton13">Add To Cart</button><br>
+                <button id="mybutton14">Buy Now</button>
+                <h5 id="myh513"></h5>
+                <h5 id="myh514"></h5>
+            </div>
+            <div class="imgs">
+                <img src="ramraj.jpg">
+                <h1>Boys Cotton Dhoti <br>White Shirt </h1>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;1049/-</mark></p>
+                <button id ="mybutton15">Add To Cart</button><br>
+                <button id="mybutton16">Buy Now</button>
+                <h5 id="myh515"></h5>
+                <h5 id="myh516"></h5>
+            </div>
+            <div class="imgs">
+                <img src="pencilcut.jpg">
+                <h1>jeans<br></h1>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;1,549/-</mark></p>
+                <button id ="mybutton17">Add To Cart</button><br>
+                <button id="mybutton18">Buy Now</button>
+                <h5 id="myh517"></h5>
+                <h5 id="myh518"></h5>
+            </div>
+            <div class="imgs">
+                <img src="blackbunny.jpg">
+                <h1>Innerwear <br>Sleeveless Mens </h1>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;75/-</mark></p>
+                <button id ="mybutton19">Add To Cart</button><br>
+                <button id="mybutton20">Buy Now</button>
+                <h5 id="myh519"></h5>
+                <h5 id="myh520"></h5>
+            </div>
+            <div class="imgs">
+                <img src="jeans.jpg">
+                <h1>Men's<br> Fit Jeans</h1>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;799/-</mark></p>
+                <button id ="mybutton21">Add To Cart</button><br>
+                <button id="mybutton22">Buy Now</button>
+                <h5 id="myh521"></h5>
+                <h5 id="myh522"></h5>
+            </div>
+            <div class="imgs">
+                <img src="silk.jpg">
+                <h1>Art Silk<br>Punjabi in Black</h1>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;999/-</mark></p>
+                <button id ="mybutton11">Add To Cart</button><br>
+                <button id="mybutton12">Buy Now</button>
+                <h5 id="myh511"></h5>
+                <h5 id="myh512"></h5>
+            </div>
+            <div class="imgs">
+                <img src="saree.jpg">
+                <h1>women saree</h1>
+                <p><mark><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;&nbsp;899/-</mark></p>
+                <button id ="mybutton23">Add To Cart</button><br>
+                <button id="mybutton24">Buy Now</button>
+                <h5 id="myh523"></h5>
+                <h5 id="myh524"></h5>
+            </div>
+    </section>
+</main>
+<footer>
+    <div class="container">
+            <div class="information1">
+            <h1>Company <div class="underline"><span></span></div></h1>
+            <div class="content1">
+                <ol>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Our Services</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Affillicate Program</a></li>
+                </ol>
+            </div>
+         </div>
+         <div class="information2">
+            <h1>Get Help<div class="underline"><span></span></div></h1>
+            <div class="content2">
+                <ol>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Shipping</a></li>
+                    <li><a href="">Returns</a></li>
+                    <li><a href="">Order Status</a></li>
+                    <li><a href="">Payment Options</a></li>
+                </ol>
+            </div>
+         </div>
+<div class="information3">
+            <h1>Online shop<div class="underline"><span></span></div></h1>
+            <div class="content3">
+                <ol>
+                    <li><a href="">Watch</a></li>
+                    <li><a href="">Bag</a></li>
+                    <li><a href="">Shoes</a></li>
+                    <li><a href="">Dress</a></li>
+                </ol>
+            </div>
+         </div>
+        <div class="information4">
+            <h1>Follow Us<div class="underline"><span></span></div></h1>
+            <div class="content4">
+                    <a href=""><i  id="z" class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i  id="z" class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i  id="z" class="fa-brands fa-square-instagram"></i></a>
+                    <a href=""><i  id="z" class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <script>
+                const Button1=document.getElementById("mybutton1");
+    const Myh51=document.getElementById("myh51");
+    Button1.onclick=function(){
+        Myh51.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button2=document.getElementById("mybutton2");
+    const Myh52=document.getElementById("myh52");
+    Button2.onclick=function(){
+        Myh52.textContent=`Item is deliever soon`;
+    }
+    const Button3=document.getElementById("mybutton3");
+    const Myh53=document.getElementById("myh53");
+    Button3.onclick=function(){
+        Myh53.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button4=document.getElementById("mybutton4");
+    const Myh54=document.getElementById("myh54");
+    Button4.onclick=function(){
+        Myh54.textContent=`Item is deliever soon`;
+    }
+    const Button5=document.getElementById("mybutton5");
+    const Myh55=document.getElementById("myh55");
+    Button5.onclick=function(){
+        Myh55.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button6=document.getElementById("mybutton6");
+    const Myh56=document.getElementById("myh56");
+    Button6.onclick=function(){
+        Myh56.textContent=`Item is deliever soon`;
+    }
+    const Button7=document.getElementById("mybutton7");
+    const Myh57=document.getElementById("myh57");
+    Button7.onclick=function(){
+        Myh57.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button8=document.getElementById("mybutton8");
+    const Myh58=document.getElementById("myh58");
+    Button8.onclick=function(){
+        Myh58.textContent=`Item is deliever soon`;
+    }
+    const Button9=document.getElementById("mybutton9");
+    const Myh59=document.getElementById("myh59");
+    Button9.onclick=function(){
+        Myh59.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button10=document.getElementById("mybutton10");
+    const Myh510=document.getElementById("myh510");
+    Button10.onclick=function(){
+        Myh510.textContent=`Item is deliever soon`;
+    }
+    const Button11=document.getElementById("mybutton11");
+    const Myh511=document.getElementById("myh511");
+    Button11.onclick=function(){
+        Myh511.textContent=`currently unavailable`;
+    }
+    const Button12=document.getElementById("mybutton12");
+    const Myh512=document.getElementById("myh512");
+    Button12.onclick=function(){
+        Myh512.textContent=`order is unavailable`;
+    }
+    const Button13=document.getElementById("mybutton13");
+    const Myh513=document.getElementById("myh513");
+    Button13.onclick=function(){
+        Myh513.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button14=document.getElementById("mybutton14");
+    const Myh514=document.getElementById("myh514");
+    Button14.onclick=function(){
+        Myh514.textContent=`Item is deliever soon`;
+    }
+    const Button15=document.getElementById("mybutton15");
+    const Myh515=document.getElementById("myh515");
+    Button15.onclick=function(){
+        Myh515.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button16=document.getElementById("mybutton16");
+    const Myh516=document.getElementById("myh516");
+    Button16.onclick=function(){
+        Myh516.textContent=`Item is deliever soon`;
+    }
+    const Button17=document.getElementById("mybutton17");
+    const Myh517=document.getElementById("myh517");
+    Button17.onclick=function(){
+        Myh517.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button18=document.getElementById("mybutton18");
+    const Myh518=document.getElementById("myh518");
+    Button18.onclick=function(){
+        Myh518.textContent=`Item is deliever soon`;
+    }
+    const Button19=document.getElementById("mybutton19");
+    const Myh519=document.getElementById("myh519");
+    Button19.onclick=function(){
+        Myh519.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button20=document.getElementById("mybutton20");
+    const Myh520=document.getElementById("myh520");
+    Button20.onclick=function(){
+        Myh520.textContent=`Item is deliever soon`;
+    }
+    const Button21=document.getElementById("mybutton21");
+    const Myh521=document.getElementById("myh521");
+    Button21.onclick=function(){
+        Myh521.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button22=document.getElementById("mybutton22");
+    const Myh522=document.getElementById("myh522");
+    Button22.onclick=function(){
+        Myh522.textContent=`Item is deliever soon`;
+    }
+    const Button23=document.getElementById("mybutton23");
+    const Myh523=document.getElementById("myh523");
+    Button23.onclick=function(){
+        Myh523.textContent=`Your Item Is Added To Cart`;
+    }
+    const Button24=document.getElementById("mybutton24");
+    const Myh524=document.getElementById("myh524");
+    Button24.onclick=function(){
+        Myh524.textContent=`Item is deliever soon`;
+    }
+            </script>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
